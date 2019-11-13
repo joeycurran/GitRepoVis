@@ -126,7 +126,24 @@ a {
   color: #2776d7;
 }
 
-.hesmaili {
+.button {
+	position:absolute;
+    transition: .5s ease;
+    top: 85%;
+    left: 40%;
+  background-color: #2368bd;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.joey {
   font-size: .9rem;
   font-weight: 400;
   color: #b4c4c8;
@@ -136,6 +153,6 @@ a {
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
 }
-.hesmaili a {
+.joeyc {
   color: #2368bd;
 }
