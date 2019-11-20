@@ -1,6 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './App.css';
+import { Row, Col } from 'react-bootstrap';
+import './LineChart.js';
+import LineChart from './LineChart.js';
 
 function displayGraph() {
   this.setState({
@@ -10,6 +13,7 @@ function displayGraph() {
 
 
 }
+
 
 const API = 'https://api.github.com/users';
 class App extends React.Component {
@@ -58,7 +62,8 @@ class App extends React.Component {
       React.createElement(SearchProfile, { fetchProfile: this.fetchProfile.bind(this) }),
       React.createElement(Profile, { data: this.state })),
       React.createElement(Button, {id: "button"}),
-      React.createElement("span", { className: "joeycurran" }, "GitHub", React.createElement("a", { href: "https://github.com/joeycurran", target: "_blank", title: "Joey Curran" }, "  -Joey Curran"))));
+      React.createElement("span", { className: "joeycurran" }, "GitHub", React.createElement("a", { href: "https://github.com/joeycurran", target: "_blank", title: "Joey Curran" }, "  -Joey Curran"),
+      React.createElement("section", { id: "card" } , React.createElement ( Button, {id: "button"})))));
 
 
   }}
@@ -96,6 +101,14 @@ render() {
   
 }}
 
+class Graph extends React.Component {
+  render(){
+    
+    return LineChart(600, 600, [{date:10,value:12},{date:10,value:12}])
+       
+}
+
+}
 
 class Profile extends React.Component {
   render() {
