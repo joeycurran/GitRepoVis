@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-
 import LineChart from "./LineChart"
 import ScatterPlot from './ScatterPlot';
 import SunburstChart from './SunburstChart';
@@ -8,6 +7,7 @@ import './Magic.css'
 
 class D3 extends Component {
    render(){
+      
       return(
          <div className="d-flex">
             <div className="d-flex flex-column">
