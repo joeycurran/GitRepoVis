@@ -4,10 +4,6 @@ import './App.css';
 import { Row, Col } from 'react-bootstrap';
 import './LineChart.js';
 import LineChart from './LineChart.js';
-import Typist from 'react-typist'
-import TypistLoop from 'react-typist-loop'
-import D3 from "./D3"
-import "./Magic.css";
 
 function displayGraph() {
   this.setState({
@@ -20,10 +16,12 @@ function displayGraph() {
 
 
 const API = 'https://api.github.com/users';
+
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+
       username: 'joeycurran',
       name: '',
       avatar: '',
@@ -67,8 +65,8 @@ class App extends React.Component {
       React.createElement(Profile, { data: this.state })),
       React.createElement(Button, {id: "button"}),
       React.createElement("span", { className: "joeycurran" }, "GitHub", React.createElement("a", { href: "https://github.com/joeycurran", target: "_blank", title: "Joey Curran" }, "  -Joey Curran"),
-      React.createElement("section", { id: "card" } , React.createElement ( Button, {id: "button"})))),
-      React.createElement(Graph, {id: "graph"}));
+      React.createElement("section", { id: "card" } , React.createElement ( Button, {id: "button"})))));
+
 
   }}
 
@@ -87,9 +85,9 @@ class SearchProfile extends React.Component {
 
   handleForm(e) {
     e.preventDefault();
-    let username = this.refs.username.getDOMNode().value;
+    let username = this.refs.username.value;
     this.props.fetchProfile(username);
-    this.refs.username.getDOMNode().value = '';
+    this.refs.username.value = '';
   }}
 
 
@@ -105,65 +103,7 @@ render() {
   
 }}
 
-class Graph extends React.Component {
-  render(){
-    return(
-    
-<Row className="show-grid d-flex flex-row">
-              <Col xs={12} className="d-flex flex-column">
-                <div className="d-flex flex-row">  
-                    <div className="justify-content-left ml-5">
-                        <div className="d-flex flex-column">
-                        {this.props.avatar_url ?
-                            <img src={this.props.avatar_url}
-                                alt="Profile"
-                                /> : null }
-                        </div>
-                        <br/>
-                        <div className="d-flex flex-column center">
-                            {this.props.profile_url ? <div><p><a className="btn btn-info" href={this.props.profile_url} target="_blank">View on GitHub</a></p></div> : null }
-                        </div>
-                    </div>
-                   
-                    
-                </div>
-              </Col>
-              <Col xs={12} md={3} className="card cardColor ml-4 shadow">
-                <div className="card-body text-white">
-                    <Col xs={12}>
-                        <div>
-                            <b>Starred</b>
-                            {
-                                Object.entries(this.props.starred.slice(0,12)).map(([key,eachitem]) =>
-                                <div key={key}>
-                                    <p><a href={eachitem.html_url}>{eachitem.full_name}</a> - {eachitem.description.substring(0, 50) + "..."}</p>
-                                </div> ) 
-                            }
-                        </div>
-                    </Col>
-                </div>
-              </Col>
-              <Col className="card flex-column cardColor ml-2 shadow">
-                <div className="card-body text-white">
-                    <Col xs={12}>
-                        <div>
-                            <b><i>Visualizations</i></b>
-                            <br/>
-                            <D3 name={this.props.name}
-                                repoDates={this.countOverTime(this.props.repos)}
-                                following={this.props.following}
-                                followers={this.props.followers}
-                                events={this.collateEvents(this.props.events)}
-                                />
-                        </div>
-                    </Col>
-                </div>
-              </Col>
-            </Row> 
-    )      
-}
 
-}
 
 class Profile extends React.Component {
   render() {
@@ -195,17 +135,13 @@ class Profile extends React.Component {
       React.createElement("a", { href: repositories, target: "_blank", title: "Number Of Repositoriy" }, React.createElement("i", null, data.repos), React.createElement("span", null, "Repositoriy"))),
 
       React.createElement("li", null,
-      React.createElement("a", { href: following, target: "_blank", title: "Number Of Following" }, React.createElement("i", null, data.following), React.createElement("span", null, "Following"))))))
-      
-      
-      );
+      React.createElement("a", { href: following, target: "_blank", title: "Number Of Following" }, React.createElement("i", null, data.following), React.createElement("span", null, "Following")))))));
 
 
 
 
 
   }}
-  
 
  
 
