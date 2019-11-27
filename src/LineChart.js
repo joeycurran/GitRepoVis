@@ -14,6 +14,7 @@ class LineChart extends Component {
             y: this.props.data.map(e => {
               return e.value
             }),
+            
             type: 'scatter',
             marker: {color: 'blue'},
             style: {color:'white'}

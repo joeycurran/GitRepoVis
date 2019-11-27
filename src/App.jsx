@@ -16,6 +16,7 @@ class App extends React.Component {
       avatar: '',
       location: '',
       repos: null,
+      langCount: null,
       repoCount: '',
       followers: '',
       following: '',
@@ -49,7 +50,8 @@ class App extends React.Component {
           homeUrl: data.html_url,
           notFound: data.message
         });
-      })
+      }).
+      catch(error => console.log('Oops! There Was A Problem'));
 
     url = `${API}/${username}/repos`;
     fetch(url). 
@@ -58,6 +60,21 @@ class App extends React.Component {
       this.setState({
         repos:data,
       });
+
+      let languages = [];
+      this.state.repos.forEach((eachitem) =>{
+        let url = eachitem.languages_url
+        fetch(url).
+          then(res => res.json()).
+          then(data => {
+            for (let [key, value] of Object.entries(data)) {
+              languages.push({lang: key, count: value});
+            }
+          })
+      })
+
+      console.log(languages)
+      this.setState({ langCount : languages });
     }).
       catch(error => console.log('Oops! There Was A Problem'));
   }
@@ -72,11 +89,14 @@ class App extends React.Component {
           React.createElement(SearchProfile, { fetchProfile: this.fetchProfile.bind(this) }),
           React.createElement(Profile, { data: this.state })),
         React.createElement(Button, { id: "button", displayGraph: this.displayGraph.bind(this) }),
-        React.createElement(Graph, { data: this.state, 
+        React.createElement(Graph, { id: "graph", 
+                                      data: this.state, 
                                       displayGraph: this.state.displayGraph,
                                       repos: this.state.repos, 
                                       followers: this.state.followers,
-                                      following: this.state.following}),
+                                      following: this.state.following,
+                                      langCount: this.props.langCount}),
+                                      
         React.createElement("span", { className: "joeycurran" }, "GitHub", React.createElement("a", { href: "https://github.com/joeycurran", target: "_blank", title: "Joey Curran" }, "  -Joey Curran"),
           React.createElement("section", { id: "card" }, React.createElement(Button, { id: "button" })))));
   }
@@ -113,15 +133,18 @@ class Graph extends React.Component {
         })
 
         return sorted;
-    }
+  }
 
-  render() {
+  render() {    
+    console.log(this.props.langCount)
+
     return (
-      this.props.displayGraph ? <D3 name={this.props.name}
+      this.props.displayGraph ? <D3 
+                                    name={this.props.name}
                                     repoDates={this.countOverTime(this.props.repos)}
                                     following={this.props.following}
                                     followers={this.props.followers}
-                                    /> : null
+                                    languages={this.props.langCount}/> : null
     );
   }
 }
