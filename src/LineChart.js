@@ -1,9 +1,5 @@
 import React, { Component } from 'react';
-import createPlotlyComponent from 'react-plotly.js/factory';
-import Plotly from 'plotly.js';
-
-const Plot = createPlotlyComponent(Plotly);
-
+import Plot from 'react-plotly.js';
 
 class LineChart extends Component {
 
@@ -27,7 +23,7 @@ class LineChart extends Component {
                 title: 'Repositories Created Over Time', 
                 xaxis: {showgrid: false,zeroline: false,showline: false}, 
                 yaxis: {showgrid: false,zeroline: false,showline: false}, 
-                font: {color:'white'}, 
+                font: {color:'steelblue'}, 
                 paper_bgcolor : 'rgba(0,0,0,0)', 
                 plot_bgcolor : 'rgba(0,0,0,0)'} }
       />

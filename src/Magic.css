@@ -15,7 +15,7 @@
     align-items: center;
 }
 .whiteBackground {
-    background: white;
+    background: steelblue;
 }
 .blueBackground {
     background: lightskyblue;
@@ -38,7 +38,7 @@
     order: 3;
 }
 .textWhite{
-    color: white;
+    color: steelblue;
     margin-left: 1%;
     margin-right: 0%;
 }
@@ -68,7 +68,7 @@ color: #1C2541;
     margin-left: 7.5vh;
 }
 .bigWhite{
-    color: white;
+    color: steelblue;
     font-size: 10vw;
     margin-left: 4%;
     margin-top: 2%;
