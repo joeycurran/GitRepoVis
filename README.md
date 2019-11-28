@@ -1,3 +1,5 @@
+# SWENG Git Access Assignment Part 1 & 2
+
 The project brief was to write a piece of software to interrogate the GitHub REST API v3
 
 The first step was to simply connect to the api. I decided to implement OAuthentication for my solution. In hind sight it was neccessary but it does give slightly more information on the authenticated user.
