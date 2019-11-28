@@ -11,7 +11,7 @@ The next step was to query some software engineering metrics from the api, repos
 This site was built using react and redux. React for a dynamic and interactive UI and Redux for state management e.g. storing data received from the api. The whole site was developed using Typescript which is a strictly typed superset of Javascript that compiles to plain javascript for great portability.
 
 
-To run my code locally yourself
+# To run my code locally yourself
 
 A Node.js 8.0.0+ setup with yarn is recommended.
 
