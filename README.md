@@ -8,11 +8,11 @@ This project was bootstrapped with http://github.com/sw-yx/create-react-app-parc
 
 The next step was to query some software engineering metrics from the api, repositories created over time for example. The idea is to visualise the data in some interesting and meaningful way to give insights into a project's code repository.
 
-![exampleOne](docs/GitHubEdit1.gif)
+![exampleTwo](docs/GitHubVisEdit2.gif)
 
 The Graphs included in the site was implimented using D3.js a library used for graphing data. the graphs are shown on the screen using the graphs button seen under user profile.
 
-![exampleTwo](docs/GitHubVisEdit2.gif)
+![exampleOne](docs/GitHubEdit1.gif) 
 
 This site was built using react and redux. React for a dynamic and interactive UI and Redux for state management e.g. storing data received from the api. The whole site was developed using Typescript which is a strictly typed superset of Javascript that compiles to plain javascript for great portability.
 
