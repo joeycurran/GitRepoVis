@@ -10,7 +10,7 @@ The next step was to query some software engineering metrics from the api, repos
 
 ![exampleTwo](docs/GitRepoFinalGif.gif)
 
-The Graphs included in the site was implimented using D3.js a library used for graphing data. the graphs are shown on the screen using the graphs button seen under user profile.
+The Graphs included in this site were implimented using the D3.js library, a library used for graphing data. The graphs are shown on the screen using the graphs button seen under user profile.
 
 ![exampleOne](docs/GitHubEdit1.gif) 
 
