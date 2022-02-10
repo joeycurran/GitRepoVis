@@ -7,7 +7,7 @@
     "d3-selection": "^1.4.1",
     "lda": "^0.2.0",
     "node": "^13.1.0",
-    "node-sass": "^4.13.0",
+    "node-sass": "^7.0.0",
     "plotly": "^1.0.6",
     "plotly.js": "^1.51.1",
     "react": "^16.11.0",
