@@ -15,7 +15,7 @@
     "react-dom": "^16.11.0",
     "react-minimal-pie-chart": "^5.0.2",
     "react-plotly.js": "^2.4.0",
-    "react-scripts": "3.2.0",
+    "react-scripts": "5.0.1",
     "react-typist": "^2.0.5",
     "react-typist-loop": "0.0.5"
   },
